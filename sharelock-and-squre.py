@@ -1,9 +1,13 @@
 import math
-def sherlock_and_squares(a, b):
-    # Calculate the number of perfect squares between a and b (inclusive)
-    return math.isqrt(b) - math.isqrt(a - 1)
-# Taking input from user
-a, b = map(int, input().split())
-print(sherlock_and_squares(a, b))
 
- 
+def squares(a, b):
+    start = math.ceil(math.sqrt(a))
+    end = math.floor(math.sqrt(b))
+    if end < start:
+        return 0
+    return end - start + 1
+
+t = int(input())
+for _ in range(t):
+    a, b = map(int, input().split())
+    print(squares(a, b))
